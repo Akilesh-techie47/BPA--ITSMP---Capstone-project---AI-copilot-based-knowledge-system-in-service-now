@@ -1,125 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Feedback Details" section_id="b6ea529d6a074d06a605a43ba0775da4" sys_domain="global" table="x_2220006_ai_cop_0_fb" view="">
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>406ec4d98b6e4606b843db84da6436ee</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>incident_number</element>
-      <position>1</position>
-      <sys_id>6c59284a700a4b56917fa772ff6bf9e6</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.split</element>
-      <position>2</position>
-      <sys_id>fafa3f3c6ac74bf58a559137224c52a5</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>rating</element>
-      <position>3</position>
-      <sys_id>2bb05d684a0a40aebbbfc5bfdd1e46d4</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.end_split</element>
-      <position>4</position>
-      <sys_id>c2290a89c9ca48069076baf539258b24</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.begin_split</element>
-      <position>5</position>
-      <sys_id>8251a313e6944cd8b769757795165a99</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>article_id</element>
-      <position>6</position>
-      <sys_id>86c352373f8540119a987a8e702a15cf</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.split</element>
-      <position>7</position>
-      <sys_id>56678b553c744669a35cf37f0442eb78</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>article_title</element>
-      <position>8</position>
-      <sys_id>80219c9911c94f5db285458e4b12fa7a</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>.end_split</element>
-      <position>9</position>
-      <sys_id>91e2c1acdc634ce9b894f2b289cc82f2</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>comment</element>
-      <position>10</position>
-      <sys_id>089f18c420d3486aad63e3485ea6c336</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE" apply_defaults="true">
-      <element>score</element>
-      <position>11</position>
-      <sys_id>0e65358fdfee4191812a2e38877df315</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE" apply_defaults="true">
-      <caption>Feedback Details</caption>
-      <header>false</header>
-      <name>x_2220006_ai_cop_0_fb</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>b6ea529d6a074d06a605a43ba0775da4</sys_id>
-      <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view display_value="Default view" name="NULL">Default view</view>
+    <sys_ui_section caption="Feedback Details" section_id="b6ea529d6a074d06a605a43ba0775da4" sys_domain="global" table="x_2220006_ai_cop_0_fb" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>406ec4d98b6e4606b843db84da6436ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>incident_number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>6c59284a700a4b56917fa772ff6bf9e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>fafa3f3c6ac74bf58a559137224c52a5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>rating</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>2bb05d684a0a40aebbbfc5bfdd1e46d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>c2290a89c9ca48069076baf539258b24</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>8251a313e6944cd8b769757795165a99</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>article_id</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>86c352373f8540119a987a8e702a15cf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>56678b553c744669a35cf37f0442eb78</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>article_title</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>80219c9911c94f5db285458e4b12fa7a</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>91e2c1acdc634ce9b894f2b289cc82f2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>comment</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>089f18c420d3486aad63e3485ea6c336</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>score</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 15:07:06</sys_created_on>
+            <sys_id>0e65358fdfee4191812a2e38877df315</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Feedback Details" display_value="Feedback Details" name="x_2220006_ai_cop_0_fb" sys_domain="global" view="Default view">b6ea529d6a074d06a605a43ba0775da4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 15:07:06</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Feedback Details</caption>
+            <header>false</header>
+            <name>x_2220006_ai_cop_0_fb</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-10-20 12:22:14</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b6ea529d6a074d06a605a43ba0775da4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_2220006_ai_cop_0_fb</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="AI Copilot for IT Support" source="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="AI Copilot for IT Support">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+            <sys_update_name>sys_ui_section_b6ea529d6a074d06a605a43ba0775da4</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-10-20 12:22:14</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

@@ -1,13 +1,46 @@
-<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
-  <sys_app_module action="INSERT_OR_UPDATE" apply_defaults="true">
-    <sys_id>4d64eaccbbfe44e6b6b60be7030f98aa</sys_id>
-    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
-    <sys_update_name>sys_app_module_4d64eaccbbfe44e6b6b60be7030f98aa</sys_update_name>
-    <active>true</active>
-    <application>8ef284fd60d543429e781450f7370dcc</application>
-    <link_type>DIRECT</link_type>
-    <order>100</order>
-    <query>x_2220006_ai_cop_0_dashboard.do</query>
-    <title>Dashboard</title>
-  </sys_app_module>
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="AI Copilot for IT Support">8ef284fd60d543429e781450f7370dcc</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DIRECT</link_type>
+        <map_page/>
+        <mobile_title/>
+        <mobile_view_name/>
+        <name/>
+        <order>100</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>x_2220006_ai_cop_0_dashboard.do</query>
+        <report/>
+        <require_confirmation>false</require_confirmation>
+        <roles/>
+        <route/>
+        <screen/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-20 12:20:53</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>4d64eaccbbfe44e6b6b60be7030f98aa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Dashboard</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="AI Copilot for IT Support" source="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Copilot for IT Support">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+        <sys_update_name>sys_app_module_4d64eaccbbfe44e6b6b60be7030f98aa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-20 12:20:53</sys_updated_on>
+        <timeline_page/>
+        <title>Dashboard</title>
+        <uncancelable>false</uncancelable>
+        <ux_list/>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
 </record_update>

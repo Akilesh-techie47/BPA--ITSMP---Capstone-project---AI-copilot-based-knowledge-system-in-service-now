@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
-  <sys_script_include action="INSERT_OR_UPDATE" apply_defaults="true">
-    <sys_id>5cf707e8027b47268bf65dad16e17619</sys_id>
-    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
-    <sys_update_name>sys_script_include_5cf707e8027b47268bf65dad16e17619</sys_update_name>
-    <access>package_private</access>
-    <active>true</active>
-    <api_name>x_2220006_ai_cop_0.AICopilotFeedback</api_name>
-    <caller_access/>
-    <client_callable>true</client_callable>
-    <description>Handles saving feedback for KB article recommendations</description>
-    <mobile_callable>false</mobile_callable>
-    <name>AICopilotFeedback</name>
-    <sandbox_callable>false</sandbox_callable>
-    <script><![CDATA[var AICopilotFeedback = Class.create()
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_2220006_ai_cop_0.AICopilotFeedback</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Handles saving feedback for KB article recommendations</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AICopilotFeedback</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AICopilotFeedback = Class.create()
 AICopilotFeedback.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     saveFeedback: function() {
         var incidentNumber = this.getParameter('sysparm_incident_number') || '';
@@ -41,6 +38,17 @@ AICopilotFeedback.prototype = Object.extendsObject(global.AbstractAjaxProcessor,
     type: 'AICopilotFeedback',
 })
 ]]></script>
-    <sys_name>AICopilotFeedback</sys_name>
-  </sys_script_include>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-20 12:22:01</sys_created_on>
+        <sys_id>5cf707e8027b47268bf65dad16e17619</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AICopilotFeedback</sys_name>
+        <sys_package display_value="AI Copilot for IT Support" source="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Copilot for IT Support">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+        <sys_update_name>sys_script_include_5cf707e8027b47268bf65dad16e17619</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-20 12:22:01</sys_updated_on>
+    </sys_script_include>
 </record_update>

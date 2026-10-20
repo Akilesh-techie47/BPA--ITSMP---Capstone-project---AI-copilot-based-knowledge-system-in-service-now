@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
-  <sys_script_include action="INSERT_OR_UPDATE" apply_defaults="true">
-    <sys_id>23da31a3c7714540b54f78b30f8baff8</sys_id>
-    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
-    <sys_update_name>sys_script_include_23da31a3c7714540b54f78b30f8baff8</sys_update_name>
-    <access>public</access>
-    <active>true</active>
-    <api_name>x_2220006_ai_cop_0.AICopilotEngine</api_name>
-    <caller_access/>
-    <client_callable>true</client_callable>
-    <description>Keyword-based recommendation engine for matching incidents to KB articles</description>
-    <mobile_callable>false</mobile_callable>
-    <name>AICopilotEngine</name>
-    <sandbox_callable>false</sandbox_callable>
-    <script><![CDATA[var AICopilotEngine = Class.create()
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_2220006_ai_cop_0.AICopilotEngine</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Keyword-based recommendation engine for matching incidents to KB articles</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AICopilotEngine</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AICopilotEngine = Class.create()
 AICopilotEngine.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     seedKnowledgeArticles: function() {
         var kbId = 'a7e8a78bff0221009b20ffffffffff17';
@@ -189,6 +186,17 @@ AICopilotEngine.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
     type: 'AICopilotEngine',
 })
 ]]></script>
-    <sys_name>AICopilotEngine</sys_name>
-  </sys_script_include>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-20 12:21:57</sys_created_on>
+        <sys_id>23da31a3c7714540b54f78b30f8baff8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AICopilotEngine</sys_name>
+        <sys_package display_value="AI Copilot for IT Support" source="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Copilot for IT Support">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+        <sys_update_name>sys_script_include_23da31a3c7714540b54f78b30f8baff8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-20 12:21:57</sys_updated_on>
+    </sys_script_include>
 </record_update>

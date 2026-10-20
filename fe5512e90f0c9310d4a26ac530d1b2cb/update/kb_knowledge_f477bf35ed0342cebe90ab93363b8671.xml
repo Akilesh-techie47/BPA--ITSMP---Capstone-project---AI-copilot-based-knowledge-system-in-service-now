@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="kb_knowledge">
+  <kb_knowledge action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>f477bf35ed0342cebe90ab93363b8671</sys_id>
+    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+    <sys_update_name>kb_knowledge_f477bf35ed0342cebe90ab93363b8671</sys_update_name>
+    <active>true</active>
+    <kb_knowledge_base>a7e8a78bff0221009b20ffffffffff17</kb_knowledge_base>
+    <short_description>DNS Connectivity Troubleshooting</short_description>
+    <text>&lt;h2&gt;Symptoms&lt;/h2&gt;&lt;p&gt;Web pages fail to load with "DNS_PROBE_FINISHED_NXDOMAIN" or "Server not found" errors. Applications report hostname resolution failures. The command &lt;code&gt;nslookup&lt;/code&gt; returns "Non-existent domain."&lt;/p&gt;&lt;h2&gt;Cause&lt;/h2&gt;&lt;p&gt;DNS failures can result from misconfigured DNS server addresses, DNS server outage, corrupted local DNS cache, DHCP not assigning DNS servers, or network adapter misconfiguration.&lt;/p&gt;&lt;h2&gt;Resolution&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Flush the DNS resolver cache: &lt;code&gt;ipconfig /flushdns&lt;/code&gt; (Windows) or &lt;code&gt;sudo killall -HUP mDNSResponder&lt;/code&gt; (Mac).&lt;/li&gt;&lt;li&gt;Verify DNS server settings: &lt;code&gt;ipconfig /all&lt;/code&gt; and check DNS Servers listed.&lt;/li&gt;&lt;li&gt;Test with a public DNS server: temporarily set DNS to 8.8.8.8 (Google) or 1.1.1.1 (Cloudflare).&lt;/li&gt;&lt;li&gt;Release and renew IP configuration: &lt;code&gt;ipconfig /release&lt;/code&gt; then &lt;code&gt;ipconfig /renew&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Check if the DNS service is running on the server: &lt;code&gt;nslookup hostname dns-server-ip&lt;/code&gt;.&lt;/li&gt;&lt;/ol&gt;&lt;h2&gt;Workaround&lt;/h2&gt;&lt;p&gt;Add critical hostname-to-IP mappings to the local hosts file (&lt;code&gt;C:\Windows\System32\drivers\etc\hosts&lt;/code&gt;) as a temporary measure while DNS is being restored.&lt;/p&gt;&lt;h2&gt;Verification&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Run &lt;code&gt;nslookup company-domain.com&lt;/code&gt; and confirm it returns the correct IP address.&lt;/li&gt;&lt;li&gt;Open a browser and navigate to an internal website by hostname.&lt;/li&gt;&lt;li&gt;Verify that &lt;code&gt;ping hostname&lt;/code&gt; resolves correctly.&lt;/li&gt;&lt;/ol&gt;</text>
+    <topic>General</topic>
+    <workflow_state>published</workflow_state>
+  </kb_knowledge>
+</record_update>

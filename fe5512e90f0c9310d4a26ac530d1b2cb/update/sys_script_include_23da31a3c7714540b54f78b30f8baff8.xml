@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+  <sys_script_include action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>23da31a3c7714540b54f78b30f8baff8</sys_id>
+    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+    <sys_update_name>sys_script_include_23da31a3c7714540b54f78b30f8baff8</sys_update_name>
+    <access>public</access>
+    <active>true</active>
+    <api_name>x_2220006_ai_cop_0.AICopilotEngine</api_name>
+    <caller_access/>
+    <client_callable>true</client_callable>
+    <description>Keyword-based recommendation engine for matching incidents to KB articles</description>
+    <mobile_callable>false</mobile_callable>
+    <name>AICopilotEngine</name>
+    <sandbox_callable>false</sandbox_callable>
+    <script><![CDATA[var AICopilotEngine = Class.create()
+AICopilotEngine.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getRecommendations: function() {
+        var incidentSysId = this.getParameter('sysparm_incident_sys_id');
+        if (!incidentSysId) {
+            return JSON.stringify({ error: 'Missing incident sys_id' });
+        }
+
+        var incGr = new GlideRecord('incident');
+        if (!incGr.get(incidentSysId)) {
+            return JSON.stringify({ error: 'Incident not found' });
+        }
+
+        var incDesc = (incGr.getValue('description') || '').toLowerCase();
+        var incShort = (incGr.getValue('short_description') || '').toLowerCase();
+        var incCategory = (incGr.getValue('category') || '').toLowerCase();
+        var incSubcategory = (incGr.getValue('subcategory') || '').toLowerCase();
+        var incText = incShort + ' ' + incDesc + ' ' + incCategory + ' ' + incSubcategory;
+
+        var stopwords = ['the', 'a', 'an', 'is', 'are', 'was', 'were', 'to', 'from', 'in', 'on',
+            'of', 'for', 'and', 'or', 'not', 'with', 'that', 'this', 'it', 'be', 'has', 'have',
+            'had', 'do', 'does', 'did', 'will', 'would', 'can', 'could', 'should', 'may', 'might',
+            'as', 'at', 'by', 'if', 'but', 'no', 'so', 'up', 'out', 'then', 'than', 'when', 'what',
+            'which', 'who', 'how', 'all', 'each', 'every', 'both', 'few', 'more', 'most', 'other',
+            'some', 'such', 'only', 'own', 'same', 'also', 'just', 'about', 'into', 'through',
+            'during', 'before', 'after', 'your', 'my', 'his', 'her', 'our', 'their'];
+
+        var tokens = incText.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(function(t) {
+            return t.length > 2 && stopwords.indexOf(t) === -1;
+        });
+
+        var kbGr = new GlideRecord('kb_knowledge');
+        kbGr.addQuery('kb_knowledge_base', 'a7e8a78bff0221009b20ffffffffff17');
+        kbGr.addQuery('workflow_state', 'published');
+        kbGr.addQuery('active', true);
+        kbGr.query();
+
+        var results = [];
+        while (kbGr.next()) {
+            var title = (kbGr.getValue('short_description') || '').toLowerCase();
+            var body = (kbGr.getValue('text') || '').toLowerCase().replace(/<[^>]+>/g, ' ');
+            var titleTokens = title.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+            var bodyTokens = body.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+
+            var score = 0;
+            var reasons = [];
+
+            // Title matches (weight 3)
+            var titleMatches = [];
+            for (var i = 0; i < tokens.length; i++) {
+                if (titleTokens.indexOf(tokens[i]) !== -1 && titleMatches.indexOf(tokens[i]) === -1) {
+                    titleMatches.push(tokens[i]);
+                }
+            }
+            if (titleMatches.length > 0) {
+                score += titleMatches.length * 3;
+                reasons.push('Title match: ' + titleMatches.join(', '));
+            }
+
+            // Symptom section matches (weight 2)
+            var symptomText = '';
+            var symptomMatch = body.match(/symptoms<\/h2>([\s\S]*?)(<h2>|$)/i);
+            if (symptomMatch) {
+                symptomText = symptomMatch[1].replace(/<[^>]+>/g, ' ').toLowerCase();
+            }
+            var symptomTokens = symptomText.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+            var symptomMatchCount = 0;
+            for (var s = 0; s < tokens.length; s++) {
+                if (symptomTokens.indexOf(tokens[s]) !== -1) {
+                    symptomMatchCount++;
+                }
+            }
+            if (symptomMatchCount > 0) {
+                score += symptomMatchCount * 2;
+                reasons.push('Symptom match: ' + symptomMatchCount + ' keywords');
+            }
+
+            // Body matches (weight 1)
+            var bodyMatchCount = 0;
+            for (var j = 0; j < tokens.length; j++) {
+                if (bodyTokens.indexOf(tokens[j]) !== -1) {
+                    bodyMatchCount++;
+                }
+            }
+            if (bodyMatchCount > 0) {
+                score += bodyMatchCount;
+                reasons.push('Content match: ' + bodyMatchCount + ' keywords');
+            }
+
+            // Category match (weight 2)
+            var categoryAreas = {
+                vpn: ['vpn', 'connection', 'tunnel', 'remote'],
+                dns: ['dns', 'domain', 'nslookup', 'resolve'],
+                wifi: ['wifi', 'wireless', 'wi-fi'],
+                email: ['email', 'outlook', 'exchange', 'mail'],
+                network: ['network', 'internet', 'connectivity']
+            };
+            for (var area in categoryAreas) {
+                var areaKws = categoryAreas[area];
+                var titleHasArea = false;
+                var incHasArea = false;
+                for (var k = 0; k < areaKws.length; k++) {
+                    if (title.indexOf(areaKws[k]) !== -1) titleHasArea = true;
+                    if (incText.indexOf(areaKws[k]) !== -1) incHasArea = true;
+                }
+                if (titleHasArea && incHasArea) {
+                    score += 2;
+                    reasons.push('Category match: ' + area);
+                    break;
+                }
+            }
+
+            if (score > 0) {
+                results.push({
+                    sys_id: kbGr.getUniqueValue(),
+                    number: kbGr.getValue('number'),
+                    title: kbGr.getValue('short_description'),
+                    score: score,
+                    reasons: reasons
+                });
+            }
+        }
+
+        results.sort(function(a, b) { return b.score - a.score; });
+        return JSON.stringify(results.slice(0, 3));
+    },
+    type: 'AICopilotEngine',
+})
+]]></script>
+    <sys_name>AICopilotEngine</sys_name>
+  </sys_script_include>
+</record_update>

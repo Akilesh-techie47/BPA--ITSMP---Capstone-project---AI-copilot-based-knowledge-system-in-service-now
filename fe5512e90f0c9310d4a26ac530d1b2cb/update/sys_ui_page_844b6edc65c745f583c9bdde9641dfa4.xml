@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+  <sys_ui_page action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>844b6edc65c745f583c9bdde9641dfa4</sys_id>
+    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+    <sys_update_name>sys_ui_page_844b6edc65c745f583c9bdde9641dfa4</sys_update_name>
+    <name>dashboard</name>
+    <endpoint>x_2220006_ai_cop_0_dashboard.do</endpoint>
+    <description>AI Copilot Dashboard - Automated Ticket Assistance</description>
+    <direct>true</direct>
+    <html><![CDATA[
+<!-- @fluent-import-html WARNING: This file was imported from the output of a static build. Modifications of any kind are likely to result in unintended behavior. In most cases, you should edit the source file of the HTML imported below. If you are absolutely certain you want to take control of this HTML, you can remove this comment to prevent the SDK from regenerating it. However, you will then be responsible for the management of this HTML in your Fluent file. -->
+<html class="-polaris">
+  <head>
+    <title>AI Copilot for IT Support</title>
+    <!-- @sdk:now-ux-globals -->
+    <!-- Resolved from sdk:now-ux-globals tag at NowSDK build time to support earlier Glide releases -->
+    <script>window.NOW = {};
+window.NOW.user = {};
+window.NOW.batch_glide_ajax_requests = false;
+window.NOW.isUsingPolaris = true;
+window.NOW.exclude_dark_theme = "false";
+window.g_ck = "$[gs.getSession().getSessionToken() || gs.getSessionToken()]";</script>
+    <!-- Include ServiceNow's required scripts -->
+    <g:requires name="scripts/doctype/functions_bootstrap14.js"></g:requires>
+    <g:requires name="scripts/lib/prototype.js"></g:requires>
+    <g:requires name="scripts/classes/ajax/GlideURL.js"></g:requires>
+    <g:requires name="scripts/doctype/CustomEventManager.js"></g:requires>
+    <g:requires name="scripts/classes/ajax/GlideAjax.js"></g:requires>
+    <g:requires name="scripts/classes/GlideUser.js"></g:requires>
+    <g2:client_script type="user"></g2:client_script>
+    <link rel="preload" href="/uxasset/set-cache-buster/$[UxFrameworkScriptables.getFlushTimestamp()].js" as="script"></link>
+    <g:requires name="scripts/polaris_theme_refresh_observer.js"></g:requires>
+    <link data-source-id="glide-theme" id="polarisberg_theme_variables" rel="stylesheet" href="/$uxappimmutables.do?sysparm_request_type=ux_theme$[AMP]sysparm_app_sys_id=c86a62e2c7022010099a308dc7c26022$[AMP]uxpcb=$[sn_ui.PolarisUI.getThemeVariableCssCacheKey()]"></link>
+    <script type="module" src="/uxasset/externals/@devsnc/library-uxf/index.jsdbx"></script>
+    <script type="text/javascript">
+    (function () {
+    var testWorks = (function () {
+        try {
+        var result = Array.from(new Set([1, 2]));
+        return (
+            Array.isArray(result) $[AMP]$[AMP] result.length === 2 $[AMP]$[AMP] result[0] === 1
+        );
+        } catch (e) {
+        return false;
+        }
+    })();
+    if (testWorks) return;
+    var originalArrayFrom = Array.from;
+    function specArrayFrom(arrayLike, mapFn, thisArg) {
+        if (arrayLike == null)
+        throw new TypeError(
+            "Array.from requires an array-like or iterable object"
+        );
+        var C = this;
+        if (typeof C !== "function" || C === Window || C === Object) {
+        C = Array;
+        }
+        var mapping = typeof mapFn === "function";
+        var iterFn = arrayLike[Symbol.iterator];
+        if (typeof iterFn === "function") {
+        var result = [];
+        var i = 0;
+        var iterator = iterFn.call(arrayLike);
+        var step;
+        while (!(step = iterator.next()).done) {
+            result[i] = mapping
+            ? mapFn.call(thisArg, step.value, i)
+            : step.value;
+            i++;
+        }
+        result.length = i;
+        return result;
+        }
+        var items = Object(arrayLike);
+        var len = Math.min(
+        Math.max(Number(items.length) || 0, 0),
+        Number.MAX_SAFE_INTEGER
+        );
+        var result = new C(len);
+        for (var k = 0; k < len; k++) {
+        result[k] = mapping ? mapFn.call(thisArg, items[k], k) : items[k];
+        }
+        result.length = len;
+        return result;
+    }
+    Array.from = function (arrayLike, mapFn, thisArg) {
+        if (
+        arrayLike != null $[AMP]$[AMP]
+        typeof arrayLike[Symbol.iterator] === "function"
+        ) {
+        try {
+            return specArrayFrom.call(this, arrayLike, mapFn, thisArg);
+        } catch (e) {
+            console.error("Array.from failed with error:", e);
+            return originalArrayFrom.call(this, arrayLike, mapFn, thisArg);
+        }
+        }
+        return originalArrayFrom.call(this, arrayLike, mapFn, thisArg);
+    };
+    })();
+    if (window.Element $[AMP]$[AMP] Element.Methods) {
+    Element.Methods.remove = function (element) {
+        element = $(element);
+        if (element.parentNode) {
+        element.parentNode.removeChild(element);
+        }
+        return element;
+    };
+    Element.addMethods();
+    }</script>
+    <!-- @sdk:now-ux-globals -->
+    <script src="/uxasset/externals/x_2220006_ai_cop_0/main.jsdbx?uxpcb=$[UxFrameworkScriptables.getFlushTimestamp()]" type="module"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>]]></html>
+  </sys_ui_page>
+  <sn_glider_source_artifact_m2m action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>515f968ca65f4b1ea57ce8fe872d6177</sys_id>
+    <application_file>844b6edc65c745f583c9bdde9641dfa4</application_file>
+    <source_artifact>2534593dbc194374a19ecee75328e2ec</source_artifact>
+  </sn_glider_source_artifact_m2m>
+  <sn_glider_source_artifact action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>2534593dbc194374a19ecee75328e2ec</sys_id>
+    <name>x_2220006_ai_cop_0_dashboard.do - BYOUI Files</name>
+  </sn_glider_source_artifact>
+  <sys_attachment action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>1e64b22fa54bd525e52de89dc1804ec3</sys_id>
+    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+    <table_sys_id>2534593dbc194374a19ecee75328e2ec</table_sys_id>
+    <table_name>sn_glider_source_artifact</table_name>
+    <file_name>x_2220006_ai_cop_0_dashboard.do - BYOUI Files.zip</file_name>
+    <content_type>application/zip</content_type>
+    <size_bytes>20989</size_bytes>
+    <size_compressed>6682</size_compressed>
+    <compressed>true</compressed>
+    <chunk_size_bytes>933336</chunk_size_bytes>
+    <hash>bc1b3b9ff86cf0f920e3bc183903c122a88ecfba621e75c6b663a8899670a5fb</hash>
+    <average_image_color/>
+    <image_width/>
+    <image_height/>
+  </sys_attachment>
+  <sys_attachment_doc action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>4028f4a9025d8edb978b821403c7d0e5</sys_id>
+    <sys_attachment>1e64b22fa54bd525e52de89dc1804ec3</sys_attachment>
+    <position>0</position>
+    <data>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</data>
+  </sys_attachment_doc>
+  <sys_attachment action="delete_multiple" query="table_sys_id=2534593dbc194374a19ecee75328e2ec^sys_idNOT IN1e64b22fa54bd525e52de89dc1804ec3"/>
+  <sys_attachment_doc action="delete_multiple" query="sys_attachment.table_sys_id=2534593dbc194374a19ecee75328e2ec^sys_idNOT IN4028f4a9025d8edb978b821403c7d0e5"/>
+  <sn_glider_source_artifact_m2m action="delete_multiple" query="source_artifact=2534593dbc194374a19ecee75328e2ec^sys_idNOT IN515f968ca65f4b1ea57ce8fe872d6177,946cc3d4798344c5911665f74d9a970c,66d2afa120224564ad56309eb609012a"/>
+</record_update>

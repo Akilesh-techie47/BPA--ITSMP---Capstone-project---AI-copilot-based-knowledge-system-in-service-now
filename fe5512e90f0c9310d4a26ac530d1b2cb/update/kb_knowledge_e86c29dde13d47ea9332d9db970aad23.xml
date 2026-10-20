@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="kb_knowledge">
+  <kb_knowledge action="INSERT_OR_UPDATE" apply_defaults="true">
+    <sys_id>e86c29dde13d47ea9332d9db970aad23</sys_id>
+    <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+    <sys_update_name>kb_knowledge_e86c29dde13d47ea9332d9db970aad23</sys_update_name>
+    <active>true</active>
+    <kb_knowledge_base>a7e8a78bff0221009b20ffffffffff17</kb_knowledge_base>
+    <short_description>VPN Connection Timeout</short_description>
+    <text>&lt;h2&gt;Symptoms&lt;/h2&gt;&lt;p&gt;VPN client hangs on "Connecting..." for 30–60 seconds, then displays "Connection timed out" or "The remote connection was not made because the attempted VPN tunnels failed."&lt;/p&gt;&lt;h2&gt;Cause&lt;/h2&gt;&lt;p&gt;VPN timeout is commonly caused by network congestion, DNS resolution failure for the VPN hostname, ISP throttling VPN traffic, or MTU size mismatch between client and server.&lt;/p&gt;&lt;h2&gt;Resolution&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Test basic internet connectivity: open a browser and navigate to an external website.&lt;/li&gt;&lt;li&gt;Try connecting to the VPN using the server's IP address instead of hostname.&lt;/li&gt;&lt;li&gt;Flush DNS cache: run &lt;code&gt;ipconfig /flushdns&lt;/code&gt; (Windows) or &lt;code&gt;sudo dscacheutil -flushcache&lt;/code&gt; (Mac).&lt;/li&gt;&lt;li&gt;Lower MTU size: &lt;code&gt;netsh interface ipv4 set subinterface "Local Area Connection" mtu=1400 store=persistent&lt;/code&gt;.&lt;/li&gt;&lt;li&gt;Disable any proxy settings that may interfere with VPN traffic.&lt;/li&gt;&lt;/ol&gt;&lt;h2&gt;Workaround&lt;/h2&gt;&lt;p&gt;Connect to a different network (e.g., mobile hotspot) to rule out ISP-level blocking. If successful, contact your ISP about VPN traffic throttling.&lt;/p&gt;&lt;h2&gt;Verification&lt;/h2&gt;&lt;ol&gt;&lt;li&gt;Establish VPN connection and confirm it completes within 10 seconds.&lt;/li&gt;&lt;li&gt;Access internal resources through the VPN to verify full connectivity.&lt;/li&gt;&lt;li&gt;Check VPN client logs for any remaining warnings.&lt;/li&gt;&lt;/ol&gt;</text>
+    <topic>General</topic>
+    <workflow_state>published</workflow_state>
+  </kb_knowledge>
+</record_update>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" apply_defaults="true" field="rating" table="x_2220006_ai_cop_0_fb" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>d6cef17fe5044178895d3a63fbb1a51f</sys_id>
+      <element>rating</element>
+      <sys_update_name>sys_choice_x_2220006_ai_cop_0_fb_rating</sys_update_name>
+      <name>x_2220006_ai_cop_0_fb</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+      <sys_package display_value="x_2220006_ai_cop_0" source="fe5512e90f0c9310d4a26ac530d1b2cb">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+      <sys_name>rating</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>84f6c7161b454746880e9b0fb6be095f</sys_id>
+      <name>x_2220006_ai_cop_0_fb</name>
+      <element>rating</element>
+      <label>Helpful</label>
+      <value>helpful</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>a5d5cb814a0c419fbda5be9df6d0eecc</sys_id>
+      <name>x_2220006_ai_cop_0_fb</name>
+      <element>rating</element>
+      <label>Partially Helpful</label>
+      <value>partial</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE" apply_defaults="true">
+      <sys_id>d7df6dc1e24a418fa0aeddf7ccd5fb7f</sys_id>
+      <name>x_2220006_ai_cop_0_fb</name>
+      <element>rating</element>
+      <label>Not Helpful</label>
+      <value>not_helpful</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

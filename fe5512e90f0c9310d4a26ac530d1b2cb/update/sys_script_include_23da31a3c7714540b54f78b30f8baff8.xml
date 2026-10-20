@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_2220006_ai_cop_0.AICopilotEngine</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description>Keyword-based recommendation engine for matching incidents to KB articles</description>
+        <mobile_callable>false</mobile_callable>
+        <name>AICopilotEngine</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var AICopilotEngine = Class.create()
+AICopilotEngine.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    seedKnowledgeArticles: function() {
+        var kbId = 'a7e8a78bff0221009b20ffffffffff17';
+        var articles = [
+            {
+                short_description: 'VPN Connection Fails with Error 809',
+                text: '<h2>Symptoms</h2><p>VPN connection attempt fails immediately with Error 809: "The network connection between your computer and the VPN server could not be established because the remote server is not responding."</p><h2>Cause</h2><p>Error 809 typically occurs when firewall or router settings block GRE protocol (Protocol 47) or PPTP traffic on port 1723. It can also occur if the VPN server address is incorrect or the server is unreachable.</p><h2>Resolution</h2><ol><li>Verify the VPN server address is correct in the VPN client configuration.</li><li>Ensure your firewall allows GRE protocol (Protocol 47) and TCP port 1723 outbound.</li><li>If behind a NAT router, enable VPN passthrough (PPTP/L2TP) in router settings.</li><li>Try switching VPN protocol from PPTP to L2TP/IPSec or IKEv2.</li><li>Restart the Routing and Remote Access Service on the VPN server.</li></ol><h2>Workaround</h2><p>Use an SSL-based VPN client (e.g., OpenVPN or Cisco AnyConnect) which uses TCP port 443 and is less likely to be blocked by firewalls.</p><h2>Verification</h2><ol><li>Attempt to establish VPN connection after applying the fix.</li><li>Run <code>ping vpn-server-address</code> to confirm server reachability.</li><li>Verify network resources are accessible through the VPN tunnel.</li></ol>'
+            },
+            {
+                short_description: 'VPN Connection Timeout',
+                text: '<h2>Symptoms</h2><p>VPN client hangs on "Connecting..." for 30-60 seconds, then displays "Connection timed out" or "The remote connection was not made because the attempted VPN tunnels failed."</p><h2>Cause</h2><p>VPN timeout is commonly caused by network congestion, DNS resolution failure for the VPN hostname, ISP throttling VPN traffic, or MTU size mismatch between client and server.</p><h2>Resolution</h2><ol><li>Test basic internet connectivity: open a browser and navigate to an external website.</li><li>Try connecting to the VPN using the server IP address instead of hostname.</li><li>Flush DNS cache: run <code>ipconfig /flushdns</code> (Windows) or <code>sudo dscacheutil -flushcache</code> (Mac).</li><li>Lower MTU size: <code>netsh interface ipv4 set subinterface "Local Area Connection" mtu=1400 store=persistent</code>.</li><li>Disable any proxy settings that may interfere with VPN traffic.</li></ol><h2>Workaround</h2><p>Connect to a different network (e.g., mobile hotspot) to rule out ISP-level blocking. If successful, contact your ISP about VPN traffic throttling.</p><h2>Verification</h2><ol><li>Establish VPN connection and confirm it completes within 10 seconds.</li><li>Access internal resources through the VPN to verify full connectivity.</li><li>Check VPN client logs for any remaining warnings.</li></ol>'
+            },
+            {
+                short_description: 'DNS Connectivity Troubleshooting',
+                text: '<h2>Symptoms</h2><p>Web pages fail to load with "DNS_PROBE_FINISHED_NXDOMAIN" or "Server not found" errors. Applications report hostname resolution failures. The command <code>nslookup</code> returns "Non-existent domain."</p><h2>Cause</h2><p>DNS failures can result from misconfigured DNS server addresses, DNS server outage, corrupted local DNS cache, DHCP not assigning DNS servers, or network adapter misconfiguration.</p><h2>Resolution</h2><ol><li>Flush the DNS resolver cache: <code>ipconfig /flushdns</code> (Windows) or <code>sudo killall -HUP mDNSResponder</code> (Mac).</li><li>Verify DNS server settings: <code>ipconfig /all</code> and check DNS Servers listed.</li><li>Test with a public DNS server: temporarily set DNS to 8.8.8.8 (Google) or 1.1.1.1 (Cloudflare).</li><li>Release and renew IP configuration: <code>ipconfig /release</code> then <code>ipconfig /renew</code>.</li><li>Check if the DNS service is running on the server: <code>nslookup hostname dns-server-ip</code>.</li></ol><h2>Workaround</h2><p>Add critical hostname-to-IP mappings to the local hosts file (C:\\Windows\\System32\\drivers\\etc\\hosts) as a temporary measure while DNS is being restored.</p><h2>Verification</h2><ol><li>Run <code>nslookup company-domain.com</code> and confirm it returns the correct IP address.</li><li>Open a browser and navigate to an internal website by hostname.</li><li>Verify that <code>ping hostname</code> resolves correctly.</li></ol>'
+            },
+            {
+                short_description: 'Wi-Fi Connectivity Troubleshooting',
+                text: '<h2>Symptoms</h2><p>Laptop cannot connect to corporate Wi-Fi network. Wi-Fi icon shows "No Internet" or "Limited Connectivity." The device connects briefly then disconnects, or fails to obtain an IP address.</p><h2>Cause</h2><p>Wi-Fi issues are commonly caused by expired or incorrect wireless credentials, wireless adapter driver issues, interference from other wireless networks, DHCP server exhaustion, or 802.1X authentication certificate expiration.</p><h2>Resolution</h2><ol><li>Forget the wireless network profile and reconnect with current credentials.</li><li>Toggle airplane mode on and off to reset the wireless adapter.</li><li>Update or reinstall the wireless adapter driver via Device Manager.</li><li>Run the Windows Network Troubleshooter: Settings &gt; Network &amp; Internet &gt; Status &gt; Network troubleshooter.</li><li>Verify the 802.1X certificate has not expired: check certificate store for the corporate CA certificate.</li></ol><h2>Workaround</h2><p>Connect via ethernet cable if available. Alternatively, use a mobile hotspot for immediate internet access while troubleshooting the Wi-Fi issue.</p><h2>Verification</h2><ol><li>Connect to the corporate Wi-Fi and confirm "Connected" status with internet access.</li><li>Run <code>ipconfig</code> and verify a valid IP address is assigned from the corporate DHCP range.</li><li>Access an internal web application to confirm full network connectivity.</li></ol>'
+            },
+            {
+                short_description: 'Outlook Connectivity Troubleshooting',
+                text: '<h2>Symptoms</h2><p>Microsoft Outlook shows "Disconnected," "Trying to connect...," or "Need Password" in the status bar. Emails are not sending or receiving. Calendar and contact sync has stopped working.</p><h2>Cause</h2><p>Outlook connectivity issues are typically caused by incorrect Exchange server settings, expired or changed password, Outlook profile corruption, cached credentials conflict, or Exchange server maintenance/outage.</p><h2>Resolution</h2><ol><li>Check Outlook connection status: hold Ctrl and right-click the Outlook system tray icon, select "Connection Status."</li><li>Test Exchange connectivity: run the Microsoft Remote Connectivity Analyzer at https://testconnectivity.microsoft.com.</li><li>Clear cached credentials: Control Panel &gt; Credential Manager &gt; remove Exchange/Outlook entries.</li><li>Repair the Outlook profile: Control Panel &gt; Mail &gt; Email Accounts &gt; Repair.</li><li>Create a new Outlook profile if repair fails: Control Panel &gt; Mail &gt; Show Profiles &gt; Add.</li></ol><h2>Workaround</h2><p>Access email via Outlook Web App (OWA) at https://mail.company.com while troubleshooting the desktop client.</p><h2>Verification</h2><ol><li>Confirm Outlook status bar shows "Connected to Microsoft Exchange."</li><li>Send a test email to yourself and verify it is received within 1 minute.</li><li>Open Calendar and verify recent appointments are visible and synced.</li></ol>'
+            }
+        ];
+
+        var created = 0;
+        var existing = 0;
+        for (var i = 0; i < articles.length; i++) {
+            var art = articles[i];
+            var check = new GlideRecord('kb_knowledge');
+            check.addQuery('short_description', art.short_description);
+            check.addQuery('kb_knowledge_base', kbId);
+            check.setLimit(1);
+            check.query();
+            if (check.hasNext()) {
+                existing++;
+                continue;
+            }
+            var gr = new GlideRecord('kb_knowledge');
+            gr.initialize();
+            gr.setValue('short_description', art.short_description);
+            gr.setValue('text', art.text);
+            gr.setValue('kb_knowledge_base', kbId);
+            gr.setValue('workflow_state', 'published');
+            gr.setValue('active', true);
+            gr.setValue('topic', 'General');
+            gr.insert();
+            created++;
+        }
+        return JSON.stringify({ success: true, created: created, existing: existing });
+    },
+
+    getRecommendations: function() {
+        var incidentSysId = this.getParameter('sysparm_incident_sys_id');
+        if (!incidentSysId) {
+            return JSON.stringify({ error: 'Missing incident sys_id' });
+        }
+
+        var incGr = new GlideRecord('incident');
+        if (!incGr.get(incidentSysId)) {
+            return JSON.stringify({ error: 'Incident not found' });
+        }
+
+        var incDesc = (incGr.getValue('description') || '').toLowerCase();
+        var incShort = (incGr.getValue('short_description') || '').toLowerCase();
+        var incCategory = (incGr.getValue('category') || '').toLowerCase();
+        var incSubcategory = (incGr.getValue('subcategory') || '').toLowerCase();
+        var incText = incShort + ' ' + incDesc + ' ' + incCategory + ' ' + incSubcategory;
+
+        var stopwords = ['the', 'a', 'an', 'is', 'are', 'was', 'were', 'to', 'from', 'in', 'on',
+            'of', 'for', 'and', 'or', 'not', 'with', 'that', 'this', 'it', 'be', 'has', 'have',
+            'had', 'do', 'does', 'did', 'will', 'would', 'can', 'could', 'should', 'may', 'might',
+            'as', 'at', 'by', 'if', 'but', 'no', 'so', 'up', 'out', 'then', 'than', 'when', 'what',
+            'which', 'who', 'how', 'all', 'each', 'every', 'both', 'few', 'more', 'most', 'other',
+            'some', 'such', 'only', 'own', 'same', 'also', 'just', 'about', 'into', 'through',
+            'during', 'before', 'after', 'your', 'my', 'his', 'her', 'our', 'their'];
+
+        var tokens = incText.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(function(t) {
+            return t.length > 2 && stopwords.indexOf(t) === -1;
+        });
+
+        var kbGr = new GlideRecord('kb_knowledge');
+        kbGr.addQuery('kb_knowledge_base', 'a7e8a78bff0221009b20ffffffffff17');
+        kbGr.addQuery('workflow_state', 'published');
+        kbGr.addQuery('active', true);
+        kbGr.query();
+
+        var results = [];
+        while (kbGr.next()) {
+            var title = (kbGr.getValue('short_description') || '').toLowerCase();
+            var body = (kbGr.getValue('text') || '').toLowerCase().replace(/<[^>]+>/g, ' ');
+            var titleTokens = title.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+            var bodyTokens = body.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+
+            var score = 0;
+            var reasons = [];
+
+            var titleMatches = [];
+            for (var i = 0; i < tokens.length; i++) {
+                if (titleTokens.indexOf(tokens[i]) !== -1 && titleMatches.indexOf(tokens[i]) === -1) {
+                    titleMatches.push(tokens[i]);
+                }
+            }
+            if (titleMatches.length > 0) {
+                score += titleMatches.length * 3;
+                reasons.push('Title match: ' + titleMatches.join(', '));
+            }
+
+            var symptomText = '';
+            var symptomMatch = body.match(/symptoms<\/h2>([\s\S]*?)(<h2>|$)/i);
+            if (symptomMatch) {
+                symptomText = symptomMatch[1].replace(/<[^>]+>/g, ' ').toLowerCase();
+            }
+            var symptomTokens = symptomText.replace(/[^a-z0-9\s]/g, ' ').split(/\s+/);
+            var symptomMatchCount = 0;
+            for (var s = 0; s < tokens.length; s++) {
+                if (symptomTokens.indexOf(tokens[s]) !== -1) {
+                    symptomMatchCount++;
+                }
+            }
+            if (symptomMatchCount > 0) {
+                score += symptomMatchCount * 2;
+                reasons.push('Symptom match: ' + symptomMatchCount + ' keywords');
+            }
+
+            var bodyMatchCount = 0;
+            for (var j = 0; j < tokens.length; j++) {
+                if (bodyTokens.indexOf(tokens[j]) !== -1) {
+                    bodyMatchCount++;
+                }
+            }
+            if (bodyMatchCount > 0) {
+                score += bodyMatchCount;
+                reasons.push('Content match: ' + bodyMatchCount + ' keywords');
+            }
+
+            var categoryAreas = {
+                vpn: ['vpn', 'connection', 'tunnel', 'remote'],
+                dns: ['dns', 'domain', 'nslookup', 'resolve'],
+                wifi: ['wifi', 'wireless', 'wi-fi'],
+                email: ['email', 'outlook', 'exchange', 'mail'],
+                network: ['network', 'internet', 'connectivity']
+            };
+            for (var area in categoryAreas) {
+                var areaKws = categoryAreas[area];
+                var titleHasArea = false;
+                var incHasArea = false;
+                for (var k = 0; k < areaKws.length; k++) {
+                    if (title.indexOf(areaKws[k]) !== -1) titleHasArea = true;
+                    if (incText.indexOf(areaKws[k]) !== -1) incHasArea = true;
+                }
+                if (titleHasArea && incHasArea) {
+                    score += 2;
+                    reasons.push('Category match: ' + area);
+                    break;
+                }
+            }
+
+            if (score > 0) {
+                results.push({
+                    sys_id: kbGr.getUniqueValue(),
+                    number: kbGr.getValue('number'),
+                    title: kbGr.getValue('short_description'),
+                    score: score,
+                    reasons: reasons
+                });
+            }
+        }
+
+        results.sort(function(a, b) { return b.score - a.score; });
+        return JSON.stringify(results.slice(0, 3));
+    },
+    type: 'AICopilotEngine',
+})
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-10-20 12:21:57</sys_created_on>
+        <sys_id>23da31a3c7714540b54f78b30f8baff8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AICopilotEngine</sys_name>
+        <sys_package display_value="AI Copilot for IT Support" source="x_2220006_ai_cop_0">fe5512e90f0c9310d4a26ac530d1b2cb</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="AI Copilot for IT Support">fe5512e90f0c9310d4a26ac530d1b2cb</sys_scope>
+        <sys_update_name>sys_script_include_23da31a3c7714540b54f78b30f8baff8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-10-20 12:21:57</sys_updated_on>
+    </sys_script_include>
+</record_update>

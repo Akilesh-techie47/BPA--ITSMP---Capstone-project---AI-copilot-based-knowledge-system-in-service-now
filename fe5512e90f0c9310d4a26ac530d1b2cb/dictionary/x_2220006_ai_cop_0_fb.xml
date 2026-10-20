@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ed82d221249a4de8b24d6c117914612e" label="AI Copilot Feedback" name="x_2220006_ai_cop_0_fb" type="collection">
+        <element label="Article Title" max_length="200" name="article_title" type="string"/>
+        <element display="true" label="Incident Number" name="incident_number" type="string"/>
+        <element label="Rating" name="rating" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Helpful" sequence="1" value="helpful"/>
+                <element inactive_on_update="false" label="Partially Helpful" sequence="2" value="partial"/>
+                <element inactive_on_update="false" label="Not Helpful" sequence="3" value="not_helpful"/>
+            </choice>
+        </element>
+        <element label="Match Score" name="score" type="string"/>
+        <element label="Comment" max_length="1000" name="comment" type="multi_two_lines"/>
+        <element label="Article ID" name="article_id" type="string"/>
+    </element>
+</database>
